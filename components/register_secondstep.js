@@ -10,7 +10,7 @@ export default function SecondStep({ nextStep }) {
     return (
         <div className={styles.card}>
             <div className={styles.cardContent}>
-                a
+                abc
             </div>
         </div>
     )
