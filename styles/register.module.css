@@ -1,0 +1,56 @@
+.content {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20%;
+}
+
+.card {
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+    height: 350px;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 29px 25px 25px 25px;
+    text-align: center;
+    color: black;
+}
+
+.card p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.cardContent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.subtitle{
+    margin-bottom: 60px;
+}
+
+.nextLink{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.nextLink:hover{
+    text-decoration: underline;
+}
+
+.nextIcon{
+    position: absolute;
+    margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    .content{
+        margin-top: 35%;
+    }
+  }
