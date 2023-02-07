@@ -50,9 +50,9 @@ function Description ({ nextStep }) {
         <AnimatePresence>
             <motion.div
             transition={{ duration: 1, delay: 3 }}
-            initial={{ opacity: 0, y: 45 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -45 }}
+            exit={{ opacity: 0, y: -25 }}
                 >
                 <div className={styles.card}>
                     <div className={styles.cardContent}>

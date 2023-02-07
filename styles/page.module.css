@@ -28,3 +28,8 @@
   z-index: 2;
 }
 
+@media (max-width: 600px) {
+  .steps{
+    font-size: 0.80rem;
+  }
+}

@@ -53,4 +53,9 @@
     .content{
         margin-top: 35%;
     }
+
+    .card{
+        width: 285px;
+        height: 380px;
+    }
   }
