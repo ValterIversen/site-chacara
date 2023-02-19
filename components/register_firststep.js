@@ -1,15 +1,26 @@
 
 "use client"
 import React, { useState } from 'react';
+import { useForm } from "react-hook-form";
 import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
+
+import PhoneMask from './PhoneMask';
 
 import styles from '../styles/register.module.css'
 
 export default function FirstStep({ nextStep }) {
 
-    const onClick = () => {
-        const data = {}
+    const { 
+        register, 
+        handleSubmit, 
+        formState: { errors }
+    } = useForm();
+
+
+    const onSubmit = async ({ name, phone }) => {
+        const data = {name, phone};
+        
         nextStep(data);
     }
 
@@ -24,22 +35,31 @@ export default function FirstStep({ nextStep }) {
                 >
                 <div className={styles.cardContent}>
                     <h3 className={styles.darkerFont}>Antes de tudo, gostariamos de saber quem é você</h3>
-                    <form className={styles.form}>
-                        <div>
-                            <label for="name" className={styles.inputLabel}>Nome:</label>
-                            <input type="text" id="name" name="name" 
-                                maxLength={70}
-                                className={styles.input}/>
+                    <form className={styles.form} >
+                        <div className={styles.inputDiv}>
+                            <label className={styles.inputLabel}>Nome</label>
+                            <input type="text" placeholder="Digite seu nome"
+                                {...register('name', {
+                                    required: 'Por favor, insira o seu nome',
+                                    minLength: { value: 8, message: 'Insira um nome válido' }
+                                })}
+                                id="name" autoFocus 
+                                className={`${styles.input} ${errors.name && styles.inputError}`}/>
                         </div>
-                        <div>
-                            <label for="phone" className={styles.inputLabel}>Celular:</label>
-                            <input type="text" id="phone" name="phone" 
-                                maxLength={15}
-                                className={styles.input}/>
+                        <div className={styles.inputDiv}>   
+                            <label className={styles.inputLabel}>Celular</label>
+                            <input type="text" placeholder="Digite seu celular"
+                                {...register('phone', {
+                                    required: 'Por favor, insira um celular',
+                                    minLength: { value: 14, message: 'Insira um celular com mais de 13 caracteres' },
+                                    onChange: (e) => {e.target.value = PhoneMask(e.target.value)}
+                                })}
+                                id="phone" 
+                                className={`${styles.input} ${errors.phone && styles.inputError}`}/>
                         </div>
-                        <a className={styles.nextLink} onClick={onClick}>Prazer em te conhecer! Qual data?
+                        <a className={styles.nextLink} onClick={handleSubmit(onSubmit)}>Prazer em te conhecer! Qual data?
                             <Image
-                                alt="próximo passo"
+                                alt="Próximo passo"
                                 className={styles.nextIcon}
                                 src="/next.png"
                                 width={19}

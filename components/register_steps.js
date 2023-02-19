@@ -22,7 +22,7 @@ const dancing_Script = Berkshire_Swash({
 });
 
 export default function RegisterSteps() {
-    const [ step, setStep ] = useState(1);
+    const [ step, setStep ] = useState(3);
     const [ user, setUser ] = useState({})
 
     const nextStep = () => {
@@ -35,11 +35,6 @@ export default function RegisterSteps() {
     };
 
     const submitSecondStep = (data) => {
-        setUser({
-            ...user,
-            data
-        })
-        
         
     }
 
