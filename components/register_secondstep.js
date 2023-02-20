@@ -3,22 +3,27 @@
 import React, { useEffect, useState } from 'react';
 import DatePicker, { registerLocale } from "react-datepicker";
 import { motion, AnimatePresence } from "framer-motion";
-
-import styles from '../styles/register.module.css';
+import {axios} from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
 import ptBR from 'date-fns/locale/pt-BR';
 registerLocale('ptBR', ptBR);
 
+import styles from '../styles/register.module.css';
+import WeatherForecast from './WeatherForecast';
+
 export default function FirstStep({ nextStep }) {
     const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
     const [alreadyReserved, setAlreadyReserved] = useState([]);
 
     useEffect(() => {
         setAlreadyReserved(getReservedDays());
     },[])
 
-    const changeDate = (date) => {
-        setStartDate(date);
+    const changeDate = (dates) => {
+        const [start, end] = dates;
+        setStartDate(start);
+        setEndDate(end);
     }
 
     const onSubmit = async ({ name, phone }) => {
@@ -43,10 +48,14 @@ export default function FirstStep({ nextStep }) {
                         className={styles.datepicker}
                         locale="ptBR"
                         minDate={new Date()}
+                        selectsRange
+                        startDate={startDate}
+                        endDate={endDate}
                         onChange={changeDate} 
                         dateFormat="dd/MM/yyyy"
                         excludeDateIntervals={alreadyReserved}
                         />
+                    <WeatherForecast startDate={startDate} endDate={endDate}/>
                 </div>
             </motion.div>
         </AnimatePresence>
@@ -71,3 +80,4 @@ const getReservedDays = () => {
 
     return reservedDays;
 }
+
