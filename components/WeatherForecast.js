@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import axios from 'axios';
 import Loading from 'react-simple-loading';
 
-import styles from '../styles/register.module.css';
+import styles from '../styles/weatherforecast.module.css';
 
 export default function WeatherForecast({ startDate, endDate }) {
 
@@ -60,24 +60,28 @@ export default function WeatherForecast({ startDate, endDate }) {
 const WeatherCard = ({days, rainMM, minTemp, maxTemp, windSpeed}) => {
 
     return (
-        <div className={styles.weatherCard}>
-            <div className={styles.legendCard}>
-                <span>Dia</span>
-                <span>Chuva</span>
-                <span>Temp max</span>
-                <span>Temp min</span>
-            </div>
-            {
-                days.map((day, index) => (
-                    <div className={styles.weatherData} key={index}>
-                        <span>{InterfaceFormatDate(day)}</span>
-                        <span>{rainMM[index]}mm</span>
-                        <span>{maxTemp[index]}°C</span>
-                        <span>{minTemp[index]}°C</span>
-                    </div>
-                ))
-            }
-        </div>
+        <table className={styles.weatherCard}>
+            <thead className={styles.legendCard}>
+                <td>
+                    <tr>Dia</tr>
+                    <tr>Chuva</tr>
+                    <tr>Temp max</tr>
+                    <tr>Temp min</tr>
+                </td>
+            </thead>
+            <tbody>
+                {
+                    days.map((day, index) => (
+                        <td className={styles.weatherData} key={index}>
+                            <tr>{InterfaceFormatDate(day)}</tr>
+                            <tr>{rainMM[index]}mm</tr>
+                            <tr>{maxTemp[index]}°C</tr>
+                            <tr>{minTemp[index]}°C</tr>
+                        </td>
+                    ))
+                }
+            </tbody>
+        </table>
     )
 }
 
