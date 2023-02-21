@@ -39,6 +39,9 @@ export default function WeatherForecast({ startDate, endDate }) {
                 setError(true);
                 
                 setLoadingWeather(false);
+            }).catch(err => {
+                setError(true);
+                setLoadingWeather(false);
             });
         }
     },[startDate, endDate])
@@ -47,10 +50,13 @@ export default function WeatherForecast({ startDate, endDate }) {
     return (
         <div className={styles.weatherForecast}>
             {
-                loadingWeather?
-                    <Loading />
+                error ? 
+                    <></>
                     :
-                    <WeatherCard days={days} rainMM={rainMM} minTemp={minTemp} maxTemp={maxTemp} windSpeed={windSpeed}/>
+                    loadingWeather?
+                        <Loading />
+                        :
+                        <WeatherCard days={days} rainMM={rainMM} minTemp={minTemp} maxTemp={maxTemp} windSpeed={windSpeed}/>
             }
         </div>
     )
