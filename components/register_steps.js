@@ -22,7 +22,7 @@ const dancing_Script = Berkshire_Swash({
 });
 
 export default function RegisterSteps() {
-    const [ step, setStep ] = useState(1);
+    const [ step, setStep ] = useState(3);
     const [ user, setUser ] = useState({})
 
     const nextStep = () => {
@@ -75,7 +75,7 @@ function Description ({ nextStep }) {
         <AnimatePresence>
             <motion.div
                 className={styles.card}
-                transition={{duration: 1.8, delay: 2.5, ease: "easeIn"}}
+                transition={{duration: 1.8, delay: 1.8, ease: "easeIn"}}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}

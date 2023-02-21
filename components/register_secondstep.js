@@ -54,6 +54,9 @@ export default function FirstStep({ nextStep }) {
                         onChange={changeDate} 
                         dateFormat="dd/MM/yyyy"
                         excludeDateIntervals={alreadyReserved}
+                        onKeyDown={(e) => {
+                            e.preventDefault();
+                         }}
                         />
                     <WeatherForecast startDate={startDate} endDate={endDate}/>
                 </div>

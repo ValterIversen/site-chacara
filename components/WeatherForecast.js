@@ -9,7 +9,6 @@ import Loading from 'react-simple-loading';
 import styles from '../styles/weatherforecast.module.css';
 
 export default function WeatherForecast({ startDate, endDate }) {
-
     const [loadingWeather, setLoadingWeather] = useState(false);
     const [error, setError] = useState(false);
     
@@ -61,7 +60,7 @@ const WeatherCard = ({days, rainMM, minTemp, maxTemp, windSpeed}) => {
 
     return (
         <div className={styles.weatherCard}>
-            <div className={styles.legendCard}>
+            <div className={styles.headerCard}>
                     <span>Dia</span>
                     <span>Chuva</span>
                     <span>Temp max</span>

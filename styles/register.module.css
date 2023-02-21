@@ -36,7 +36,7 @@
     color: black;
     border: solid 3.5px rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(11px);
-    color: rgba(120, 120, 120);
+    color: rgba(80, 80, 80);
   }
 
 .card p {
