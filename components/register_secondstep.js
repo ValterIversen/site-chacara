@@ -1,6 +1,7 @@
 
 "use client"
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image'
 import DatePicker, { registerLocale } from "react-datepicker";
 import { motion, AnimatePresence } from "framer-motion";
 import {axios} from 'axios';
@@ -32,7 +33,7 @@ export default function FirstStep({ nextStep }) {
         nextStep(data);
     }
     
-    
+
     return (
         <AnimatePresence>
             <motion.div
