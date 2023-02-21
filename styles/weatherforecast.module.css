@@ -1,16 +1,19 @@
 .weatherCard {
+overflow: scroll;
 display: flex;
 flex-direction: row;
-max-width: 90%;
-margin-left: auto;
-margin-right: auto;
-scroll-behavior: smooth;
-overflow: scroll;
 border-radius: (5px);
+height: 100px;
+}
+.weatherCard > div{
+    display: flex;
+    flex-direction: row;
 }
 
-.weatherCard tr {
-    height: 40px;
+.weatherCard span {
+    padding: 2px;
+    width: 87px;
+    height: 25px;
 }
 
 .weatherCard > div {
