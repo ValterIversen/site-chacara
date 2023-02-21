@@ -23,8 +23,8 @@ export default function WeatherForecast({ startDate, endDate }) {
         if(startDate && endDate){
             setError(false);
             setLoadingWeather(true);
-            const newStartDate = ApiFormatDate(startDate);
-            const newEndDate = ApiFormatDate(endDate);
+            const newStartDate = ApiFormatDate(startDate.addDays(1));
+            const newEndDate = ApiFormatDate(endDate.addDays(1));
             
             getWeather(newStartDate, newEndDate).then(data => {
                 if(data.time){
@@ -60,6 +60,12 @@ export default function WeatherForecast({ startDate, endDate }) {
             }
         </div>
     )
+}
+
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
 }
 
 const WeatherCard = ({days, rainMM, minTemp, maxTemp, windSpeed}) => {

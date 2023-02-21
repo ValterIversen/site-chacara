@@ -43,7 +43,7 @@ export default function FirstStep({ nextStep }) {
                                     required: 'Por favor, insira o seu nome',
                                     minLength: { value: 8, message: 'Insira um nome válido' }
                                 })}
-                                id="name" autoFocus 
+                                id="name" 
                                 className={`${styles.input} ${errors.name && styles.inputError}`}/>
                         </div>
                         <div className={styles.inputDiv}>   
