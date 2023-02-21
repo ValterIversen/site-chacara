@@ -18,7 +18,7 @@ export default function FirstStep({ nextStep }) {
 
     useEffect(() => {
         setAlreadyReserved(getReservedDays());
-    },[])
+    }, []);
 
     const changeDate = (dates) => {
         const [start, end] = dates;
@@ -31,8 +31,8 @@ export default function FirstStep({ nextStep }) {
         
         nextStep(data);
     }
-
-
+    
+    
     return (
         <AnimatePresence>
             <motion.div
@@ -57,8 +57,18 @@ export default function FirstStep({ nextStep }) {
                         onKeyDown={(e) => {
                             e.preventDefault();
                          }}
+                         onFocus={(e) => e.target.readOnly = true}
                         />
                     <WeatherForecast startDate={startDate} endDate={endDate}/>
+                    <a className={styles.nextLink} onClick={onSubmit}>Tem interesse? Entre em contato e agende!
+                        <Image
+                            alt="próximo passo"
+                            className={styles.nextIcon}
+                            src="/next.png"
+                            width={19}
+                            height={19}
+                            />
+                    </a>
                 </div>
             </motion.div>
         </AnimatePresence>
