@@ -61,7 +61,7 @@ export default function FirstStep({ nextStep }) {
                          onFocus={(e) => e.target.readOnly = true}
                         />
                     <WeatherForecast startDate={startDate} endDate={endDate}/>
-                    <a className={styles.nextLink} onClick={onSubmit}>Tem interesse? Entre em contato e agende!
+                    <a className={styles.nextLink} onClick={onSubmit}>Reservar datas!
                         <Image
                             alt="próximo passo"
                             className={styles.nextIcon}
