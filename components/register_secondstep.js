@@ -31,7 +31,11 @@ export default function FirstStep({ user }) {
     }
     
     const linkUpdate = () => {
-        const newLink = `https://api.whatsapp.com/send?phone=5517991129720&text=Ol%C3%A1,%20meu%20nome%20${user.name}%20-%20${user.phone}.%0AEu%20tenho%20interesse%20em%20reservar%20a%20ch%C3%A1cara%20Luz%20do%20Sol%20nos%20dias%20${startDate}%20at%C3%A9%20o%20dia%20${endDate}.%0AQuanto%20fica%20a%20reserva?%20`;
+        const newStartDate = formatDate(startDate);
+        const newEndDate = formatDate(endDate);
+        console.log('datas atualiza link ' + newStartDate + newEndDate)
+        console.log("atualiza link: " + startDate + endDate)
+        const newLink = `https://api.whatsapp.com/send?phone=5517991129720&text=Ol%C3%A1,%20meu%20nome%20${user.name}%20-%20${user.phone}.%0AEu%20tenho%20interesse%20em%20reservar%20a%20ch%C3%A1cara%20Luz%20do%20Sol%20nos%20dias%20${newStartDate}%20at%C3%A9%20o%20dia%20${newEndDate}.%0AQuanto%20fica%20a%20reserva?%20`;
         return setLink(newLink);
     }
 
@@ -77,6 +81,18 @@ export default function FirstStep({ user }) {
     )
 }
 
+const formatDate = (date) => {
+    const yyyy = date.getFullYear();
+    let mm = date.getMonth() + 1; // Months start at 0!
+    let dd = date.getDate();
+    
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+    
+    const formattedToday = dd + '/' + mm + '/' + yyyy;
+
+    return formattedToday;
+}
 
 const getReservedDays = () => {
     const reservedDays = 
