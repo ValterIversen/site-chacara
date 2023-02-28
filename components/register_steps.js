@@ -22,7 +22,7 @@ const dancing_Script = Berkshire_Swash({
 });
 
 export default function RegisterSteps() {
-    const [ step, setStep ] = useState(3);
+    const [ step, setStep ] = useState(1);
     const [ user, setUser ] = useState({})
 
     const nextStep = () => {
@@ -34,39 +34,16 @@ export default function RegisterSteps() {
         nextStep();
     };
 
-    const submitSecondStep = (data) => {
-        
-    }
-
-
     return (
         <div className={styles.content}>
                 {
                     {
-                        0: <HandClick nextStep={nextStep}/>,
                         1: <Description nextStep={nextStep}/>,
                         2: <FirstStep nextStep={submitFirstStep}/>,
-                        3: <SecondStep nextStep={submitFirstStep}/>
+                        3: <SecondStep user={user}/>
                     }[step]
                 }
         </div>
-    )
-}
-
-function HandClick ({ nextStep }) {
-    return(
-        <AnimatePresence>
-            <motion.div
-                transition={{ delay: 1 }}
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -25 }}
-                >
-                <button className={styles.handButton}>
-                    a
-                </button>
-            </motion.div>
-        </AnimatePresence>
     )
 }
 
