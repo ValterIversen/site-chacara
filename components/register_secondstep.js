@@ -27,15 +27,17 @@ export default function FirstStep({ user }) {
         const [start, end] = dates;
         setStartDate(start);
         setEndDate(end);
-        linkUpdate();
+        
+        if(start && end)
+            linkUpdate(start, end);
     }
     
-    const linkUpdate = () => {
-        const newStartDate = formatDate(startDate);
-        const newEndDate = formatDate(endDate);
-        console.log('datas atualiza link ' + newStartDate + newEndDate)
-        console.log("atualiza link: " + startDate + endDate)
+    const linkUpdate = (start, end) => {
+        const newStartDate = formatDate(start);
+        const newEndDate = formatDate(end);
+
         const newLink = `https://api.whatsapp.com/send?phone=5517991129720&text=Ol%C3%A1,%20meu%20nome%20${user.name}%20-%20${user.phone}.%0AEu%20tenho%20interesse%20em%20reservar%20a%20ch%C3%A1cara%20Luz%20do%20Sol%20nos%20dias%20${newStartDate}%20at%C3%A9%20o%20dia%20${newEndDate}.%0AQuanto%20fica%20a%20reserva?%20`;
+
         return setLink(newLink);
     }
 
