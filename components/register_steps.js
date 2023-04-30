@@ -58,8 +58,7 @@ function Description ({ nextStep }) {
                 exit={{ opacity: 0, y: -15 }}
                 >
                 <div className={styles.cardContent}>
-                    <h1 className={`${pT_Sans_Narrow.className} ${styles.title}`}>Chácara Luz do Sol</h1>
-                    <h3 className={`${dancing_Script.className} ${styles.subtitle}`}>Um lugar para ser feliz</h3>
+                    <img className={styles.logo} src='./logo.png'/>
                     <p>Planeje um evento, chame sua família e amigos!</p>
                     <a className={styles.nextLink} onClick={nextStep}>Tem interesse? Entre em contato e agende!
                         <Image

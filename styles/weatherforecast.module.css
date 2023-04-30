@@ -3,14 +3,14 @@ overflow: scroll;
 display: flex;
 flex-direction: row;
 border-radius: (5px);
-background-color: rgba(255, 255, 255, 0.15);
-border: solid 2px rgb(255, 255, 255, 0.75);
+border: solid 0.5px rgb(255, 255, 255, 0.5);
 border-radius: 10px;
 scroll-behavior: smooth;
 padding: 10px 5px;
-box-shadow: 0 2px 7px rgba(129, 124, 124, 0.5);
+box-shadow: 2px 5px 15px rgba(129, 124, 124, 0.5);
 }
 .weatherCard > div{
+    margin-left: 3px;
     display: flex;
     flex-direction: row;
 }

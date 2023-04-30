@@ -1,7 +1,7 @@
 .content {
     margin-right: auto;
     margin-left: auto;
-    margin-top: 20%;
+    margin-top: 18%;
 }
 
 .handButton{
@@ -20,23 +20,23 @@
 }
 
 .darkerFont{
-    color: rgba(50, 50, 50);
+    color: white;
+    margin-bottom: 20px;
 }
 
 .card {
     margin-right: auto;
     margin-left: auto;
-    width: 310px;
-    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.4);
-    height: 350px;
+    width: 350px;
+    box-shadow: 5px 15px 25px rgba(129, 124, 124, 0.4);
+    height: 420px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.52);
+    background-color: #4ED5DB;
     padding: 22px 25px 25px 25px;
     text-align: center;
-    color: black;
-    border: solid 3.5px rgba(255, 255, 255, 0.58);
+    color: rgb(240,240,240);
     backdrop-filter: blur(11px);
-    color: rgba(80, 80, 80);
+    border: solid 0.5px rgb(255, 255, 255, 0.6);
   }
 
 .card p {
@@ -50,19 +50,9 @@
     position: relative;
 }
 
-.title{
-    font-size: 36px;
-    background: -webkit-linear-gradient(45deg, #FF4DC5, #f8c81a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.subtitle{
-    font-size: 20px;
-    margin-bottom: 60px;
-    background: -webkit-linear-gradient(45deg, #FF4DC5, #f8c81a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo {
+    width: 95%;
+    margin-bottom: 40px;
 }
 
 .nextLink{
@@ -71,7 +61,7 @@
     right: 50%;
     transform: translateX(50%);
     text-decoration: none;
-    color: rgb(50,50,50);
+    color: rgb(240,240,240);
     padding: 0;
     cursor: pointer;
 }
