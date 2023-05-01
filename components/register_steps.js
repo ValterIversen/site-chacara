@@ -59,7 +59,7 @@ function Description ({ nextStep }) {
                 >
                 <div className={styles.cardContent}>
                     <img className={styles.logo} src='./logo.png'/>
-                    <p>Planeje um evento, chame sua família e amigos!</p>
+                    <p>Planeje um evento, reuna sua família e amigos!</p>
                     <a className={styles.nextLink} onClick={nextStep}>Tem interesse? Entre em contato e agende!
                         <Image
                             alt="próximo passo"

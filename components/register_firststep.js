@@ -41,7 +41,7 @@ export default function FirstStep({ nextStep }) {
                             <input type="text" placeholder="Digite seu nome"
                                 {...register('name', {
                                     required: 'Por favor, insira o seu nome',
-                                    minLength: { value: 8, message: 'Insira um nome válido' }
+                                    minLength: { value: 3, message: 'Insira um nome válido' }
                                 })}
                                 id="name" 
                                 className={`${styles.input} ${errors.name && styles.inputError}`}/>
