@@ -9,7 +9,7 @@ import FirstStep from './register_firststep'
 import SecondStep from './register_secondstep'
 
 import styles from '../styles/register.module.css'
-import next from 'next';
+import logo from '../public/logo.png';
 
 
 const pT_Sans_Narrow = PT_Sans_Narrow({
@@ -58,14 +58,7 @@ function Description ({ nextStep }) {
                 exit={{ opacity: 0, y: -15 }}
                 >
                 <div className={styles.cardContent}>
-<<<<<<< HEAD
-                    <img className={styles.logo} src='./logo.png'/>
-                    <p>Planeje um evento, reuna sua família e amigos!</p>
-=======
-                    <h1 className={`${pT_Sans_Narrow.className} ${styles.title}`}>Chácara Luz do Sol</h1>
-                    <h3 className={`${dancing_Script.className} ${styles.subtitle}`}>Um lugar para ser feliz</h3>
-                    <p>Planeje um evento, chame sua família e amigos!</p>
->>>>>>> parent of 9457523 (Mudança de interface)
+                    <Image className={styles.logo} src={logo} alt="logo"/>
                     <a className={styles.nextLink} onClick={nextStep}>Tem interesse? Entre em contato e agende!
                         <Image
                             alt="próximo passo"
