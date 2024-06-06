@@ -1,14 +1,19 @@
+.weatherForecast {
+    font-family: sans-serif;
+}
+
 .weatherCard {
-overflow: scroll;
-display: flex;
-flex-direction: row;
-border-radius: (5px);
-background-color: rgba(255, 255, 255, 0.15);
-border: solid 2px rgb(255, 255, 255, 0.75);
-border-radius: 10px;
-scroll-behavior: smooth;
-padding: 10px 5px;
-box-shadow: 0 2px 7px rgba(129, 124, 124, 0.5);
+    overflow-x: auto; /* permite scroll horizontal */
+    overflow-y: hidden; /* impede scroll vertical */
+    display: flex;
+    flex-direction: row;
+    border-radius: (5px);
+    background-color: rgba(255, 255, 255, 0.15);
+    border: solid 2px rgb(255, 255, 255, 0.75);
+    border-radius: 10px;
+    scroll-behavior: smooth;
+    padding: 10px 5px;
+    box-shadow: 0 2px 7px rgba(129, 124, 124, 0.5);
 }
 .weatherCard > div{
     display: flex;
